@@ -34,7 +34,7 @@ time_now = datetime.now()
 
 def is_iss_overhead():
     # Your position is within +5 or -5 degrees of the ISS position,giving it a marginal error -->
-    if (iss_latitude - 5 <= MY_LAT <= iss_longitude + 5) and (iss_longitude - 5 <= MY_LONG <= iss_longitude + 5):
+    if (iss_latitude - 5 <= MY_LAT <= iss_latitude + 5) and (iss_longitude - 5 <= MY_LONG <= iss_longitude + 5):
         return True
     else:
         return False
