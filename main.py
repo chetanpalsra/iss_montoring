@@ -49,13 +49,11 @@ def is_night():
     #time_now.hour gives an integer between 0-23.
 
 #Now send mail:
-while True:
-    time.sleep(10)
-    if is_iss_overhead() and is_night():
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-            smtp.starttls()
-            smtp.login(MY_EMAIL, MY_PASSWORD)
-            smtp.sendmail(from_addr=MY_EMAIL,to_addrs=MY_EMAIL,msg = f'Subject:Look UP☝️!\nThe ISS is above you in the sky.')
+if is_iss_overhead() and is_night():
+    with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+        smtp.starttls()
+        smtp.login(MY_EMAIL, MY_PASSWORD)
+        smtp.sendmail(from_addr=MY_EMAIL,to_addrs=MY_EMAIL,msg = f'Subject:Look UP☝️!\nThe ISS is above you in the sky.')
 
 
 
